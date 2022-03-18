@@ -15,6 +15,9 @@ class CreateTargetsTable extends Migration
     {
         Schema::create('targets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('target', 50);
+            $table->boolean("achievement");
+            $table->Date('fixed_date');
             $table->timestamps();
         });
     }
