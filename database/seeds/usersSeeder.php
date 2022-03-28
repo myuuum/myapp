@@ -12,18 +12,27 @@ class usersSeeder extends Seeder
     public function run()
     {
         \DB::table('users')->insert([
-                        [
-            'id' => '2',
-            'name' => 'Bさん',
-            'age' => '30',
-            'sex' => '女',
+            [
+                'name' => 'Aさん',
+                'age' => 21,
+                'sex' => '男',
+                'email' => 'test1@gmail.com',
+                'password' => Hash::make('test1'),
             ],
-            [    
-            'id' => '3',
-            'name' => 'Cさん',
-            'age' => '17',
-            'sex' => '男',
-            ]
+            [
+                'name' => 'Bくん',
+                'age' => 15,
+                'sex' => '男',
+                'email' => 'test2@gmail.com',
+                'password' => Hash::make('test2'),
+            ],
+            [
+                'name' => 'Cさん',
+                'age' => 25,
+                'sex' => '女',
+                'email' => 'test3@gmail.com',
+                'password' => Hash::make('test3'),
+            ],
         ]);
     }
 }

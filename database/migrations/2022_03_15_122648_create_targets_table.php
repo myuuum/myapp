@@ -18,6 +18,7 @@ class CreateTargetsTable extends Migration
             $table->string('target', 50);
             $table->boolean("achievement");
             $table->Date('fixed_date');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
