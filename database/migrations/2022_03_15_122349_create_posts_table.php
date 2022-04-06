@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('date');
+            $table->Date('date')->default(date('Y-m-d H:i:s'));;
             $table->string('body_comment', 200);
             $table->string('body_time', 50);
             $table->integer('target_id');

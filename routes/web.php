@@ -13,7 +13,12 @@
 
 Route::get('/', 'TargetController@index');
 Route::get('/post', 'PostController@post');
-Route::get('/user', 'TargetController@user');
+Route::get('/user/{target}', 'TargetController@user');
+
+Route::post('/post', 'PostController@store');
+//Route::get('{target}', 'TargetController@show');
+Route::get('/target/{target_id}/create', 'PostController@create');
+Route::get('/target/{target}', 'TargetController@show');
 
 
 Auth::routes();

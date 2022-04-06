@@ -12,14 +12,21 @@ class TargetController extends Controller
         return view('index')->with(['targets' => $target->get()]);  
     }
     
-    public function post(Target $target)
-    {
-        return view('post')->with(['targets' => $target->get()]);  
-    }
+    //public function post(Target $target)
+    //{
+        //return view('post')->with(['targets' => $target->get()]);  
+    //}
     
     public function user(Target $target)
     {
-        return view('user')->with(['targets' => $target->get()]);  
+        return view('user')->with(['target' => $target]);  
+    }
+    
+    public function show(Target $target)
+    {
+        //dd($target);
+        //$targets =Target::all();
+        return view('show')->with(['target' => $target]); 
     }
     
 }

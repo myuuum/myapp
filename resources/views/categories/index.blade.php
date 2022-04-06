@@ -1,9 +1,8 @@
-@extends('layouts.app')　　　　　　　　　　　　　　　　　
-@section('content')
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
-        <title>index</title>
+        <title>home</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
@@ -12,15 +11,16 @@
         <div class='targets'>
             @foreach ($targets as $target)
                 <div class='target'>
-                    <h2><a href="/user/{{ $target->id }}">{{ $target->user->name}}</a>
-                    <a href="/target/{{ $target->id }}">{{ $target->target}}</a></h2>
+                    <h2><a href="{{ $target->id }}">{{ $target->user->name}}</a>
+                    <a href="/post/{{ $target->id }}">{{ $target->target}}</a>
+                    <a href='/post'>{{ $target->target }}</a></h2>
                     <div class='body'>
                         <p>期日　{{ $target->fixed_date }}</p>
                         <p>{{ $target->achievement }}</p>
                     </div>
                 </div>
             @endforeach
+            
         </div>
     </body>
 </html>
-@endsection

@@ -13,20 +13,20 @@
     <body>
         @foreach ($target->posts->unique('user_id') as $post)
         <div class="user">
-            <h1>プロフィール　{{$post->target->user->name}}</h1>
+            <h1>{{$post->target->user->name}}</h1>
+            <h2><p>{{$post->target->target}}</p></h2>
             <div class="title">
-                <h2>
-                <p>{{$post->target->user->age}}</p>
-                <p>{{$post->target->user->sex}}</p>
-                <p>---------------------------</p>
-                @foreach ($target->posts->unique('user_id') as $post)
-                    <p>目標　{{$post->target->target}}</p>
+                @foreach($target->posts as $post)
+                    <p>{{$post->date}}</p>
+                    <p>{{$post->body_comment}}</p>
+                    <p>{{$post->body_time}}</p>
+                    <p>---------------------------</p>
                 @endforeach
-                </h2>
             </div>
         </div>
         @endforeach
         <div class="footer">
+            [<a href='/target/{{$target->id}}/create'>create</a>]
             <a href="/">戻る</a>
         </div>
     </body>
