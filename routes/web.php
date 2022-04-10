@@ -10,15 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'TargetController@index');
-Route::get('/post', 'PostController@post');
-Route::get('/user/{target}', 'TargetController@user');
-
-Route::post('/post', 'PostController@store');
-//Route::get('{target}', 'TargetController@show');
-Route::get('/target/{target_id}/create', 'PostController@create');
-Route::get('/target/{target}', 'TargetController@show');
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/', 'TargetController@index')->middleware('auth');
+    Route::get('/post', 'PostController@post');
+    Route::get('/user/{target}', 'TargetController@user');
+    Route::get('/user/{Auth::user()->id}', 'TargetController@user');
+    Route::post('/post', 'PostController@store');
+    //Route::get('{target}', 'TargetController@show');
+    Route::get('/target/{target_id}/create', 'PostController@create');
+    Route::get('/target/{target}', 'TargetController@show');
+});
 
 
 Auth::routes();

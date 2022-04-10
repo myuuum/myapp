@@ -32,7 +32,22 @@ class postsSeeder extends Seeder
                 'body_time' => '3時間',
                 'target_id' => 1,
                 'user_id' => 1,
+            ],
+            [    
+                'date' => '2022-5-1',
+                'body_comment' => '数学',
+                'body_time' => '2時間',
+                'target_id' => 2,
+                'user_id' => 2,
+            ],
+            [    
+                'date' => '2022-7-13',
+                'body_comment' => 'ランニング',
+                'body_time' => '2km',
+                'target_id' => 3,
+                'user_id' => 3,
             ]
+            
         ]);
     }
 }

@@ -20,6 +20,3 @@
                 @endforeach
             </div>
         @endforeach
-        [<a href='/post/create'>create</a>]
-    </body>
-</html>

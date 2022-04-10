@@ -10,7 +10,8 @@ class PostController extends Controller
     
     public function post(Post $post)
     {
-        return view('post')->with(['posts' => $post->get()]);  
+        $image=Post::all();
+        return view('post')->with(['posts' => $post->get()],compact('image'));  
     }
     
     public function create($target_id)

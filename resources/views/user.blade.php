@@ -20,7 +20,11 @@
                 <p>{{$post->target->user->sex}}</p>
                 <p>---------------------------</p>
                 @foreach ($target->posts->unique('user_id') as $post)
-                    <p>目標　{{$post->target->target}}</p>
+                    @if ($post->target->target == 'NULL'))
+                        <p>目標が設定されていません;</p>
+                    @else
+                        <p>目標　{{$post->target->target}}</p>
+                    @endif
                 @endforeach
                 </h2>
             </div>

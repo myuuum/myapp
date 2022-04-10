@@ -27,6 +27,7 @@ class TargetController extends Controller
         //dd($target);
         //$targets =Target::all();
         return view('show')->with(['target' => $target]); 
+        
     }
     
 }

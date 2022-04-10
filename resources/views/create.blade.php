@@ -20,8 +20,9 @@
                 <input type="date" name="post[date]">
             </div>
             <input type="hidden" name="post[target_id]" value="{{$target_id}}">
+            <input type="hidden" name="post[user_id]" value="{{$target_id}}">
             <input type="submit" value="保存"/>
         </form>
-        <div class="back">[<a href="/post">back</a>]</div>
+        <div class="back">[<a href="/">back</a>]</div>
     </body>
-</html>>
+</html>
